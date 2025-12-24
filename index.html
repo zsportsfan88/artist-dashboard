@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;The Core | Management Strategy Portal&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root { --primary: #1DB954; --bg: #0a0a0a; --sidebar: #121212; --border: #282828; --text: #fff; --muted: #b3b3b3; --red: #ff4444; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; height: 100vh; overflow: hidden; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>aside { width: 260px; background: var(--sidebar); border-right: 1px solid var(--border); padding: 20px; overflow-y: auto; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.brand { font-weight: 800; font-size: 1.1rem; margin-bottom: 20px; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 15px; letter-spacing: 1px;}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ul { list-style: none; padding: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>li { padding: 12px 15px; cursor: pointer; border-radius: 6px; font-size: 0.9rem; transition: 0.2s; color: #eee; margin-bottom: 2px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>li:hover { background: var(--border); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>li.active { background: #1db95422; color: var(--primary); font-weight: bold; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>main { flex: 1; display: flex; flex-direction: column; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header { padding: 15px 40px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #121212; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.status-bar { padding: 8px 40px; background: #1a1a1a; font-size: 0.72rem; color: var(--muted); display: flex; gap: 30px; border-bottom: 1px solid var(--border); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.content { padding: 30px; overflow-y: auto; flex: 1; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>table { width: 100%; border-collapse: separate; border-spacing: 0 4px; min-width: 1400px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>th { text-align: left; padding: 12px; color: var(--muted); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1px; position: sticky; top: 0; background: var(--bg); z-index: 10; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>td { padding: 12px; background: #181818; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: 0.8rem; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heat-cell { font-weight: 700; text-align: center; color: #000 !important; border-radius: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lead-green { background: #1DB954; color: white !important; font-weight: bold; border-radius: 4px; padding: 4px 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lead-red { background: #ff4444; color: white !important; font-weight: bold; border-radius: 4px; padding: 4px 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.search-bar { background: #242424; border: 1px solid transparent; padding: 10px 20px; border-radius: 20px; color: white; width: 300px; outline: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.search-bar:focus { border-color: var(--primary); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;aside&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="brand"&gt;THE CORE ENTERTAINMENT&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul id="artist-list"&gt;&lt;/ul&gt;</p>
+<p class="p1">&lt;/aside&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 id="current-artist" style="margin:0;"&gt;Select Artist&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="global-search" class="search-bar" placeholder="Search song title..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="status-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span id="update-timestamp"&gt;Last Updated: ---&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Lead Time: Green &gt;21d | Red &lt;10d&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Posts: Mid 35 | Green 50&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="table-output"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// REPLACE WITH YOUR GOOGLE SHEET CSV LINK</p>
+<p class="p1">const MASTER_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTp-yQVU_VNNOR5aXQ7m-Xv7BiAgYKjBfJuT6lIETy6ksjqR-Lj2WW4DNqYGCNX2rfCpUtemiS1shes/pub?gid=2070907343&amp;single=true&amp;output=csv';</p>
+<p class="p2"><br></p>
+<p class="p1">let allMasterData = [];</p>
+<p class="p2"><br></p>
+<p class="p1">// Rule 1: 21-Day Conditional Formatting</p>
+<p class="p1">function getLeadTimeStyle(firstPostStr, releaseDateStr) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!firstPostStr || !releaseDateStr || releaseDateStr.includes("Undecided") || releaseDateStr.includes("TBD")) return "";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const first = new Date(firstPostStr);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const release = new Date(releaseDateStr);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (isNaN(first) || isNaN(release)) return "";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const diff = (release - first) / (1000 * 60 * 60 * 24);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (diff &gt; 21) return "lead-green";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (diff &lt; 10) return "lead-red";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return "";<span class="Apple-converted-space"> </span></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// Rules 2 &amp; 3: Color Scaling</p>
+<p class="p1">function getHeatColor(val, min, max, isBenchmarkCol = false) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let value = parseFloat(val.toString().replace(/[^0-9.]/g, '')) || 0;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Static Benchmarks for Columns D and I (Post Counts)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (isBenchmarkCol) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (value &gt;= 50) return `rgb(29, 185, 84)`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (value &lt;= 10) return `rgb(255, 68, 68)`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ratio = (value - 10) / (50 - 10);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let r = ratio &lt; 0.5 ? 255 : Math.floor(255 - (ratio - 0.5) * 2 * 255);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let g = ratio &gt; 0.5 ? 255 : Math.floor(ratio * 2 * 255);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return `rgb(${r}, ${g}, 100)`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Dynamic scale for the specific artist</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const ratio = (value - min) / (max - min || 1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let r = ratio &lt; 0.5 ? 255 : Math.floor(255 - (ratio - 0.5) * 2 * 255);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let g = ratio &gt; 0.5 ? 255 : Math.floor(ratio * 2 * 255);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return `rgb(${r}, ${g}, 100)`;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function renderArtistData(artistName) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const search = document.getElementById('global-search').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const artistData = allMasterData.filter(row =&gt; row[0].trim().toLowerCase() === artistName.toLowerCase());</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Helper to get stats for the Artist-Specific color scale</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const getStats = (idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const vals = artistData.map(r =&gt; parseFloat(r[idx].toString().replace(/[^0-9.]/g, '')) || 0);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return { min: Math.min(...vals), max: Math.max(...vals) };</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Index mapping for "Core Priority Tracks" CSV structure</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// F=6 (1st Wk), I=9 (Avg Weekly), K=11 (Avg Artist Views), L=32 (ER), M=36 (UGC), N=37 (UGC Views)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const statsF = getStats(6), statsI = getStats(9), statsK = getStats(11),<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>statsL = getStats(32), statsM = getStats(36), statsN = getStats(37);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let html = `&lt;table&gt;&lt;thead&gt;&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Song&lt;/th&gt;&lt;th&gt;1st Post&lt;/th&gt;&lt;th&gt;Pre-Posts (D)&lt;/th&gt;&lt;th&gt;Release Date&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;1st Wk Streams&lt;/th&gt;&lt;th&gt;Total Streams&lt;/th&gt;&lt;th&gt;Avg Wk Streams&lt;/th&gt;&lt;th&gt;Total Posts (I)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Avg Artist Views&lt;/th&gt;&lt;th&gt;Engagement %&lt;/th&gt;&lt;th&gt;Total UGC&lt;/th&gt;&lt;th&gt;UGC Views&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>artistData.forEach(row =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!row[1].toLowerCase().includes(search)) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>html += `&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td&gt;&lt;strong&gt;${row[1]}&lt;/strong&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="${getLeadTimeStyle(row[2], row[3])}"&gt;${row[2] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="heat-cell" style="background:${getHeatColor(row[12], 0, 0, true)}"&gt;${row[12] || '0'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td&gt;${row[3] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="heat-cell" style="background:${getHeatColor(row[6], statsF.min, statsF.max)}"&gt;${row[6] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td&gt;${row[7] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="heat-cell" style="background:${getHeatColor(row[9], statsI.min, statsI.max)}"&gt;${row[9] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="heat-cell" style="background:${getHeatColor(row[13], 0, 0, true)}"&gt;${row[13] || '0'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="heat-cell" style="background:${getHeatColor(row[11], statsK.min, statsK.max)}"&gt;${row[11] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="heat-cell" style="background:${getHeatColor(row[32], statsL.min, statsL.max)}"&gt;${row[32] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="heat-cell" style="background:${getHeatColor(row[36], statsM.min, statsM.max)}"&gt;${row[36] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;td class="heat-cell" style="background:${getHeatColor(row[37], statsN.min, statsN.max)}"&gt;${row[37] || '-'}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/tr&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('table-output').innerHTML = html + `&lt;/tbody&gt;&lt;/table&gt;`;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function init() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>Papa.parse(MASTER_CSV_URL, {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>download: true,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header: false,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>complete: (results) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>allMasterData = results.data.filter(r =&gt; r[0] &amp;&amp; r[0] !== "ARTIST");</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Build sidebar, including Clever</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const artists = [...new Set(allMasterData.map(r =&gt; r[0]))].sort();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const list = document.getElementById('artist-list');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>artists.forEach(name =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const li = document.createElement('li');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>li.innerText = name;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>li.onclick = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.querySelectorAll('li').forEach(el =&gt; el.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>li.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('current-artist').innerText = name;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('update-timestamp').innerText = `Last Updated: ${new Date().toLocaleTimeString()}`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderArtistData(name);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>};</p>
+<p class="p1"><span class="Apple-converted-space">                </span>list.appendChild(li);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1">}</p>
+<p class="p1">init();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
